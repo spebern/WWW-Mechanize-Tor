@@ -3,28 +3,25 @@ package WWW::Mechanize::Tor;
 use strict;
 use warnings;
 use LWP::UserAgent::Tor;
+use Data::Dumper;
 
 require WWW::Mechanize;
 
 our $VERSION = '0.01';
 
-for my $i (0 .. $#WWW::Mechanize::ISA) {
-    if ($WWW::Mechanize::ISA[$i] eq 'LWP::UserAgent') {
-        $WWW::Mechanize::ISA[$i] = 'LWP::UserAgent::Tor';
-        last;
-    }
-}
+use strict;
+use warnings;
 
-use base 'WWW::Mechanize';
+use parent qw(LWP::UserAgent::Tor WWW::Mechanize);
 
 1;
 
 __END__
 
 =pod
- 
+
 =encoding UTF-8
- 
+
 =head1 NAME
 
 WWW::Mechanize::Tor - rotate your ips
