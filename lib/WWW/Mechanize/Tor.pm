@@ -3,14 +3,9 @@ package WWW::Mechanize::Tor;
 use strict;
 use warnings;
 use LWP::UserAgent::Tor;
-use Data::Dumper;
-
-require WWW::Mechanize;
+use WWW::Mechanize;
 
 our $VERSION = '0.01';
-
-use strict;
-use warnings;
 
 use parent qw(LWP::UserAgent::Tor WWW::Mechanize);
 
@@ -35,8 +30,8 @@ version 0.01
   use WWW::Mechanize::Tor;
 
   my $mech = WWW::Mechanize::Tor->new(
-      tor_control_port => 9051,            # 9051 on default
-      tor_port         => 9050,            # 9050 on default
+      tor_control_port => 9051,            # on default empty port
+      tor_port         => 9050,            # on default empty port
       tor_ip           => '127.0.0.1',     # localhost on default
       tor_config       => 'path/to/torrc', # tor default config path
   );
