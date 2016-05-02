@@ -18,9 +18,9 @@ WriteMakefile(
         'Test::More' => 0,
     },
     PREREQ_PM => {
-        WWW::Mechanize      => 0,
-        LWP::UserAgent::Tor => 0,
-        File::Which         => 0,
+        'WWW::Mechanize'      => 0,
+        'LWP::UserAgent::Tor' => 0,
+        'File::Which'         => 0,
     },
     dist  => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean => { FILES => 'WWW-Mechanize-Tor-*' },
